@@ -1,0 +1,6 @@
+Hello from Terraform File Provisioner
+
+This file was copied from my local machine to the EC2 instance.
+
+Name: Shaik Sami
+Learning: Terraform Provisioners
