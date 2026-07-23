@@ -191,7 +191,7 @@
     aws_security_group.rds_sg.id
   ]
 
-  skip_final_snapshot = true
+  skip_final_snapshot = false
 
   tags = {
     Name = "sami-rds"
@@ -206,7 +206,7 @@ resource "null_resource" "local_sql_exec" {
   depends_on = [aws_db_instance.rds]
 
   provisioner "local-exec" {
-    command = "mysql -h ${aws_db_instance.rds.address} -u admin -pShaiksami123! sami < init.sql"
+    command = "mysql -h ${aws_db_instance.rds.address} -u admin -pShaiksami123 sami < init.sql"
   }
 
   triggers = {
